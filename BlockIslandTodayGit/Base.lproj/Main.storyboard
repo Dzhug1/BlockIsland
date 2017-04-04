@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--My Posts-->
         <scene sceneID="bx3-3c-YDJ">
             <objects>
                 <viewController id="uuD-Zo-rMG" customClass="MyPostsViewController" customModule="BlockIslandTodayGit" customModuleProvider="target" sceneMemberID="viewController">
@@ -94,7 +94,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="r9e-qQ-mnA"/>
+                    <tabBarItem key="tabBarItem" title="My Posts" id="r9e-qQ-mnA"/>
                     <connections>
                         <outlet property="feedCollectionView" destination="OPW-xC-QGM" id="lPk-dH-kbB"/>
                     </connections>
@@ -274,9 +274,9 @@
                         <outlet property="emailTextField" destination="CLJ-Xb-NyR" id="AYc-gJ-yFe"/>
                         <outlet property="errorMessage" destination="Bb5-Yi-qaf" id="50I-VZ-RBj"/>
                         <outlet property="passwordTextField" destination="57j-AO-e8Q" id="AOd-ro-3J0"/>
-                        <segue destination="N4L-Yq-x6O" kind="presentation" identifier="HomeViewSeque" id="rqt-9m-B9g"/>
                         <segue destination="ca3-dj-JSM" kind="presentation" identifier="ForOwnersSeque" id="BVw-Vb-KrQ"/>
                         <segue destination="tNX-GW-n4d" kind="presentation" identifier="ForBusinessesSeque" id="JjX-OU-7XN"/>
+                        <segue destination="N4L-Yq-x6O" kind="presentation" identifier="HomeViewSeque" id="SYU-F3-SQx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -300,7 +300,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Sb-Gi-bhp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2921" y="632"/>
+            <point key="canvasLocation" x="3100" y="-822"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="hRs-N6-wJe">
@@ -319,7 +319,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JCw-Pb-b2c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1188" y="-950"/>
+            <point key="canvasLocation" x="1927" y="-985"/>
         </scene>
         <!--For Owners View Controller-->
         <scene sceneID="N5I-SW-y4i">
@@ -596,17 +596,31 @@
                                     <action selector="logOutDidTapped:" destination="GJh-3F-hEG" eventType="touchUpInside" id="8Sy-hj-96Z"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXs-AX-9rx">
+                                <rect key="frame" x="166" y="318" width="43" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="SignIn"/>
+                                <connections>
+                                    <action selector="signInTapped:" destination="GJh-3F-hEG" eventType="touchUpInside" id="5JP-vB-Krv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="logOutButtonOutlet" destination="HeT-MI-Cy4" id="1LT-rw-Y77"/>
+                        <outlet property="signInButtonOutlet" destination="AXs-AX-9rx" id="tyv-el-JqT"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="LogInSeque" id="ma4-ZA-T3P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ld1-JS-j1U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4695.1999999999998" y="-196.55172413793105"/>
+            <point key="canvasLocation" x="3828" y="601"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="rEf-Wa-5Av">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h5A-0c-GiC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController id="N4L-Yq-x6O" customClass="TabBarController" customModule="BlockIslandTodayGit" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="PfQ-Fr-ASl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -616,10 +630,8 @@
                     <connections>
                         <segue destination="AQl-5A-Gn1" kind="relationship" relationship="viewControllers" id="VJk-K7-HeT"/>
                         <segue destination="xSI-AH-gso" kind="relationship" relationship="viewControllers" id="T5l-UC-dG1"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="LogInSeque" id="b7C-uY-w3q"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="h5A-0c-GiC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1927.2" y="123.68815592203899"/>
         </scene>
@@ -709,11 +721,11 @@
             </objects>
             <point key="canvasLocation" x="1057" y="1016"/>
         </scene>
-        <!--Item 1-->
+        <!--Feed-->
         <scene sceneID="SuN-9R-dRo">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AQl-5A-Gn1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="8rX-p8-7aS"/>
+                    <tabBarItem key="tabBarItem" title="Feed" image="Feed" id="8rX-p8-7aS"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="a8X-zt-cx6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -726,13 +738,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jJ0-q6-gqK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2976.8000000000002" y="-196.55172413793105"/>
+            <point key="canvasLocation" x="2977" y="55"/>
         </scene>
-        <!--Item 1-->
+        <!--Suggested-->
         <scene sceneID="mJp-Yi-925">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BRh-fc-7Cx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="het-Zb-MOX"/>
+                    <tabBarItem key="tabBarItem" title="Suggested" id="het-Zb-MOX"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="sRS-HP-KdE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -747,11 +759,11 @@
             </objects>
             <point key="canvasLocation" x="988" y="-1650.224887556222"/>
         </scene>
-        <!--Item 1-->
+        <!--New Post-->
         <scene sceneID="Ehd-RC-UwW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oEc-mG-66x" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="SB5-eQ-zJT"/>
+                    <tabBarItem key="tabBarItem" title="New Post" id="SB5-eQ-zJT"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="57P-Re-dRd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -769,12 +781,13 @@
     </scenes>
     <resources>
         <image name="Delete_000000_50.png" width="50" height="50"/>
+        <image name="Feed" width="25" height="25"/>
         <image name="Images 100" width="100" height="100"/>
         <image name="block-island-map" width="204" height="326"/>
         <image name="profile_image.png" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rqt-9m-B9g"/>
-        <segue reference="b7C-uY-w3q"/>
+        <segue reference="SYU-F3-SQx"/>
+        <segue reference="ma4-ZA-T3P"/>
     </inferredMetricsTieBreakers>
 </document>
