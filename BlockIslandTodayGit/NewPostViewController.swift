@@ -17,13 +17,9 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     @IBOutlet weak var newImageView: UIImageView!
     @IBOutlet weak var postDatePicker: UIDatePicker!
     
-    //    var databaseRef = FIRDatabase.database().reference()
-    //    var loggedInUser = FIRAuth.auth()?.currentUser
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+ 
     }
     
     @IBAction func imageIsTapped(_ sender: AnyObject) {
@@ -54,10 +50,6 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
-    }
-    
-    @IBAction func cancelTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func didTapPostButton(_ sender: UIButton) {

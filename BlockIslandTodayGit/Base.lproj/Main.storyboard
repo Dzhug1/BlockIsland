@@ -584,19 +584,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cxb-Ua-Jz7">
-                                <rect key="frame" x="0.0" y="101" width="134" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="Cxb-Ua-Jz7">
+                                <rect key="frame" x="112" y="92" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tSS-oI-LdI">
-                                <rect key="frame" x="166" y="101" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xW4-rN-ffH">
-                                <rect key="frame" x="166" y="192" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xW4-rN-ffH">
+                                <rect key="frame" x="16" y="250" width="343" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -618,18 +611,27 @@
                                     <action selector="signInTapped:" destination="GJh-3F-hEG" eventType="touchUpInside" id="5JP-vB-Krv"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tSS-oI-LdI">
+                                <rect key="frame" x="16" y="279" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="emailLabel" destination="tSS-oI-LdI" id="S9b-dT-FyQ"/>
                         <outlet property="logOutButtonOutlet" destination="HeT-MI-Cy4" id="1LT-rw-Y77"/>
+                        <outlet property="profileImage" destination="Cxb-Ua-Jz7" id="W9d-iY-pqy"/>
                         <outlet property="signInButtonOutlet" destination="AXs-AX-9rx" id="tyv-el-JqT"/>
+                        <outlet property="userNameLabel" destination="xW4-rN-ffH" id="f3Y-1e-9ik"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="LogInSeque" id="ma4-ZA-T3P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ld1-JS-j1U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2977" y="888"/>
+            <point key="canvasLocation" x="2976.8000000000002" y="887.40629685157433"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="rEf-Wa-5Av">
@@ -675,9 +677,6 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="textDidChanged:" destination="XXj-87-eVx" eventType="editingDidEnd" id="OzT-ue-RCH"/>
-                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PASSWORD" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sVb-8z-1Iu">
                                 <rect key="frame" x="67" y="429" width="240" height="30"/>
@@ -685,9 +684,6 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="textDidChanged:" destination="XXj-87-eVx" eventType="editingDidEnd" id="igM-P0-m0z"/>
-                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="USERNAME" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eJu-KN-Rp1">
                                 <rect key="frame" x="67" y="352" width="240" height="30"/>
@@ -707,10 +703,6 @@
                                     <action selector="signUpDidTapped:" destination="XXj-87-eVx" eventType="touchUpInside" id="n8D-io-QLM"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="HbA-Io-awD">
-                                <rect key="frame" x="67" y="159" width="240" height="185"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dg9-d1-JNz">
                                 <rect key="frame" x="67" y="515" width="240" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -718,6 +710,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="HbA-Io-awD">
+                                <rect key="frame" x="112" y="194" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="aEI-bJ-lvK" appends="YES" id="LEt-N5-Hl1"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -732,8 +732,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pcM-lV-IxR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="aEI-bJ-lvK">
+                    <connections>
+                        <action selector="imageIsTapped:" destination="XXj-87-eVx" id="eeE-dl-dHU"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1057" y="1016"/>
+            <point key="canvasLocation" x="1056.8" y="1015.1424287856073"/>
         </scene>
         <!--Feed-->
         <scene sceneID="SuN-9R-dRo">
@@ -797,12 +802,13 @@
         <image name="Delete_000000_50.png" width="50" height="50"/>
         <image name="Feed" width="25" height="25"/>
         <image name="Images 100" width="100" height="100"/>
+        <image name="Profile" width="50" height="50"/>
         <image name="block-island-map" width="204" height="326"/>
         <image name="clipart-approved-business-stamp-1-a481.png" width="128" height="128"/>
         <image name="profile_image.png" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SYU-F3-SQx"/>
-        <segue reference="QEw-5V-hKb"/>
+        <segue reference="Rre-OD-JmN"/>
+        <segue reference="ma4-ZA-T3P"/>
     </inferredMetricsTieBreakers>
 </document>

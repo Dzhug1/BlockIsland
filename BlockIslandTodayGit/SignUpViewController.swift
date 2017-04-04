@@ -9,8 +9,9 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
+import FirebaseStorage
 
-class SignUpViewController: UIViewController{
+class SignUpViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var usernameTextField: UITextField!
@@ -19,34 +20,42 @@ class SignUpViewController: UIViewController{
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var errorMessage: UILabel!
 
-    
-    let imagePicker = UIImagePickerController()
-    var selectedPhoto: UIImage!
     var databaseRef = FIRDatabase.database().reference()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        signUpButton.isEnabled = false
-
-        let tap = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.selectPhoto(tap:)))
-        tap.numberOfTapsRequired = 1
-        profileImage.addGestureRecognizer(tap)
         profileImage.layer.cornerRadius = profileImage.frame.size.height/2
         profileImage.clipsToBounds = true
     }
-
-    func selectPhoto(tap: UITapGestureRecognizer) {
-        let imagePicker = UIImagePickerController()
-        self.imagePicker.delegate = self
-        self.imagePicker.allowsEditing = true
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            self.imagePicker.sourceType = .camera
-        } else {
-            self.imagePicker.sourceType = .photoLibrary
-        }
+    
+    @IBAction func imageIsTapped(_ sender: AnyObject) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .photoLibrary
+        imagePickerController.delegate = self
         
-        self.present(imagePicker, animated: true, completion: nil)
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let selectedPhoto = info[UIImagePickerControllerOriginalImage] as? UIImage
+        profileImage.image = selectedPhoto
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        /*
+         MARK: clear the text on editting
+         */
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     @IBAction func cancelDidTapped(_ sender: Any) {
@@ -54,49 +63,39 @@ class SignUpViewController: UIViewController{
     }
     
     @IBAction func signUpDidTapped(_ sender: Any) {
-        signUpButton.isEnabled = false
-        
         FIRAuth.auth()?.createUser(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
             if(error != nil) {
-                self.errorMessage.text = error!.localizedDescription
+                self.errorMessage.text = error?.localizedDescription
             } else {
-                self.errorMessage.text = "Registered succesfully"
+                self.errorMessage.text = "Registered succesfully. Entering..."
                 
                 FIRAuth.auth()?.signIn(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!, completion: { (user, error) in
                     if error == nil {
                         self.databaseRef.child("users").child((user?.uid)!).child("email").setValue(self.emailTextField.text)
                         self.databaseRef.child("users").child((user?.uid)!).child("name").setValue(self.usernameTextField.text)
                         self.databaseRef.child("users").child((user?.uid)!).child("status").setValue("user")
+                        if self.profileImage.image != nil {
+                            let imageName = UUID().uuidString
+                            let storageRef = FIRStorage.storage().reference().child("Profiles").child("\(imageName).jpg")
+                            if let uploadData = UIImageJPEGRepresentation(self.profileImage.image!, 0.2){
+                                storageRef.put(uploadData, metadata: nil, completion: { (metadata, error) in
+                                    if error != nil {
+                                        print (error as Any)
+                                        return
+                                    } else if let postImageURL = metadata?.downloadURL()?.absoluteString {
+                                        self.databaseRef.child("users").child((user?.uid)!).child("profileImage").setValue(postImageURL)
+                                        self.performSegue(withIdentifier: "HomeViewSeque", sender: nil)
+                                    }
+                                })
+                            }
+                        }
                         self.performSegue(withIdentifier: "HomeViewSeque", sender: nil)
                     }
                 })
             }
         })
     }
-    
-    @IBAction func textDidChanged(_ sender: UITextField) {
-        if((usernameTextField.text?.characters.count)!>0 && (emailTextField.text?.characters.count)!>0 && (passwordTextField.text?.characters.count)!>0)
-        {
-            signUpButton.isEnabled = true
-        } else {
-            signUpButton.isEnabled = false
-        }
-    }
-}
 
-extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    // imagePicker delegate
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        selectedPhoto = info[UIImagePickerControllerEditedImage] as? UIImage
-        self.profileImage.image = selectedPhoto
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
