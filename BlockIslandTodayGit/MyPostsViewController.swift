@@ -84,6 +84,7 @@ class MyPostsViewController: UIViewController, UICollectionViewDataSource, UICol
                 let editedText = editAlertController.textFields?[0].text
                 
                 FIRDatabase.database().reference().child("Posts").child("Suggested").child(post.postId!).updateChildValues(["text" : editedText!])
+                FIRDatabase.database().reference().child("Posts").child("Suggested").child(post.postId!).updateChildValues(["approved" : "no"])
             })
             
             editAlertController.addTextField { (textField) in

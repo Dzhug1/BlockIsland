@@ -16,10 +16,11 @@ class BusinessCellCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var postText: UITextView!
     @IBOutlet weak var businessImage: UIImageView!
+    @IBOutlet weak var approvedImage: UIImageView!
     
     var post: Post? {
         didSet{
-            
+            approvedImage.isHidden = true
             let currenttime = NSNumber(value: Int(NSDate().timeIntervalSince1970))
             if (post?.timestamp?.intValue)! < currenttime.intValue {
                 postText.text = post?.text
@@ -33,6 +34,9 @@ class BusinessCellCollectionViewCell: UICollectionViewCell {
                                 let dateFormatter = DateFormatter()
                                 dateFormatter.dateFormat = "hh:mm:ss a"
                                 self.timeLabel.text = dateFormatter.string(from: timestampDate as Date)
+                                if self.post?.approved == "yes" {
+                                    self.approvedImage.isHidden = false
+                                }
                             }
                         }
                     }, withCancel: nil)

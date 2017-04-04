@@ -75,9 +75,14 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clipart-approved-business-stamp-1-a481.png" translatesAutoresizingMaskIntoConstraints="NO" id="idg-CT-mEA">
+                                                    <rect key="frame" x="244" y="259" width="111" height="96"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <connections>
+                                            <outlet property="approvedImage" destination="idg-CT-mEA" id="xzo-ym-7yI"/>
                                             <outlet property="businessImage" destination="fqX-Ye-A7F" id="3Ml-Uj-ctN"/>
                                             <outlet property="postBusinessName" destination="sxL-vp-p6W" id="7Gf-Ml-zUb"/>
                                             <outlet property="postImage" destination="ewq-ms-aDZ" id="br9-si-7Bd"/>
@@ -101,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Auu-lP-iF1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1788" y="516.79160419790105"/>
+            <point key="canvasLocation" x="-535.20000000000005" y="841.52923538230891"/>
         </scene>
         <!--Business Settings View Controller-->
         <scene sceneID="kU3-Td-Pz9">
@@ -132,7 +137,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aBR-IW-zaO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2556" y="-338"/>
+            <point key="canvasLocation" x="-1722" y="372"/>
         </scene>
         <!--New Post View Controller-->
         <scene sceneID="vlb-Ea-6pb">
@@ -146,9 +151,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Images 100" translatesAutoresizingMaskIntoConstraints="NO" id="WaL-N5-15l">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Images 100" translatesAutoresizingMaskIntoConstraints="NO" id="WaL-N5-15l">
                                 <rect key="frame" x="16" y="252" width="343" height="214"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="nez-O2-lb0" appends="YES" id="B4I-aq-3vy"/>
+                                </connections>
                             </imageView>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="L0D-YC-eHN">
                                 <rect key="frame" x="0.0" y="474" width="375" height="144"/>
@@ -190,8 +199,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HGh-4X-aQW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="nez-O2-lb0">
+                    <connections>
+                        <action selector="imageIsTapped:" destination="2ps-kr-yXh" id="mLj-lN-el3"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1721" y="-338"/>
+            <point key="canvasLocation" x="-1897" y="-338"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="SAK-wn-c9p">
@@ -300,7 +314,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Sb-Gi-bhp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3100" y="-822"/>
+            <point key="canvasLocation" x="2977" y="-632"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="hRs-N6-wJe">
@@ -319,7 +333,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JCw-Pb-b2c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1927" y="-985"/>
+            <point key="canvasLocation" x="118" y="-959"/>
         </scene>
         <!--For Owners View Controller-->
         <scene sceneID="N5I-SW-y4i">
@@ -444,7 +458,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IH0-DW-evO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2847" y="-1650"/>
+            <point key="canvasLocation" x="1926" y="-959"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="cet-GU-8fq">
@@ -462,7 +476,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qy5-G9-ViZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="337" y="-950"/>
+            <point key="canvasLocation" x="988" y="-959"/>
         </scene>
         <!--Feed User View Controller-->
         <scene sceneID="wug-v7-Sfd">
@@ -556,7 +570,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tj9-ZF-2Xm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3828" y="-197.45127436281859"/>
+            <point key="canvasLocation" x="3842" y="55"/>
         </scene>
         <!--User Profile View Controller-->
         <scene sceneID="Kl3-LE-I7S">
@@ -615,7 +629,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ld1-JS-j1U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3828" y="601"/>
+            <point key="canvasLocation" x="2977" y="888"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="rEf-Wa-5Av">
@@ -784,10 +798,11 @@
         <image name="Feed" width="25" height="25"/>
         <image name="Images 100" width="100" height="100"/>
         <image name="block-island-map" width="204" height="326"/>
+        <image name="clipart-approved-business-stamp-1-a481.png" width="128" height="128"/>
         <image name="profile_image.png" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="SYU-F3-SQx"/>
-        <segue reference="ma4-ZA-T3P"/>
+        <segue reference="QEw-5V-hKb"/>
     </inferredMetricsTieBreakers>
 </document>

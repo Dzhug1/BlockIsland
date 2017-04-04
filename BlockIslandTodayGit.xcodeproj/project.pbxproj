@@ -34,6 +34,7 @@
 		1A46C9B31E9393410095A2CF /* block-island-map.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A46C9AD1E9393410095A2CF /* block-island-map.png */; };
 		1A46C9B51E93A1550095A2CF /* MyPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A46C9B41E93A1550095A2CF /* MyPostsViewController.swift */; };
 		1A46C9B71E93A1730095A2CF /* BusinessCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A46C9B61E93A1730095A2CF /* BusinessCellCollectionViewCell.swift */; };
+		1A46C9B91E93B9520095A2CF /* clipart-approved-business-stamp-1-a481.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A46C9B81E93B9520095A2CF /* clipart-approved-business-stamp-1-a481.png */; };
 		5333EC81F74B82EB54B5FC2D /* Pods_BlockIslandTodayGit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D24053CC30B73C3637E6D53 /* Pods_BlockIslandTodayGit.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		1A46C9AD1E9393410095A2CF /* block-island-map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "block-island-map.png"; sourceTree = "<group>"; };
 		1A46C9B41E93A1550095A2CF /* MyPostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPostsViewController.swift; sourceTree = "<group>"; };
 		1A46C9B61E93A1730095A2CF /* BusinessCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessCellCollectionViewCell.swift; sourceTree = "<group>"; };
+		1A46C9B81E93B9520095A2CF /* clipart-approved-business-stamp-1-a481.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clipart-approved-business-stamp-1-a481.png"; sourceTree = "<group>"; };
 		2D24053CC30B73C3637E6D53 /* Pods_BlockIslandTodayGit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlockIslandTodayGit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D679FE97FFF91136D1651A8 /* Pods-BlockIslandTodayGit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockIslandTodayGit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlockIslandTodayGit/Pods-BlockIslandTodayGit.debug.xcconfig"; sourceTree = "<group>"; };
 		B0B3FD6E127B60CBDEBFBF8B /* Pods-BlockIslandTodayGit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockIslandTodayGit.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlockIslandTodayGit/Pods-BlockIslandTodayGit.release.xcconfig"; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 		1A46C9A71E9393240095A2CF /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				1A46C9B81E93B9520095A2CF /* clipart-approved-business-stamp-1-a481.png */,
 				1A46C9A81E9393410095A2CF /* Delete_000000_50.png */,
 				1A46C9A91E9393410095A2CF /* Delete_000000_25.png */,
 				1A46C9AA1E9393410095A2CF /* delete-128.png */,
@@ -269,6 +272,7 @@
 				1A46C9B21E9393410095A2CF /* profile_image.png in Resources */,
 				1A46C9AF1E9393410095A2CF /* Delete_000000_25.png in Resources */,
 				1A46C9B11E9393410095A2CF /* close.png in Resources */,
+				1A46C9B91E93B9520095A2CF /* clipart-approved-business-stamp-1-a481.png in Resources */,
 				1A46C9B01E9393410095A2CF /* delete-128.png in Resources */,
 				1A46C9B31E9393410095A2CF /* block-island-map.png in Resources */,
 				1A46C9781E93819F0095A2CF /* Assets.xcassets in Resources */,

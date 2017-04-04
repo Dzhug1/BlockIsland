@@ -11,7 +11,7 @@ import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
 
-class NewPostViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
+class NewPostViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var newPostTextView: UITextView!
     @IBOutlet weak var newImageView: UIImageView!
@@ -26,9 +26,23 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         // Do any additional setup after loading the view.
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func imageIsTapped(_ sender: AnyObject) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .photoLibrary
+        imagePickerController.delegate = self
+        
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let selectedPhoto = info[UIImagePickerControllerOriginalImage] as? UIImage
+        newImageView.image = selectedPhoto
+        
+        dismiss(animated: true, completion: nil)
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
