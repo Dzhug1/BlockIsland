@@ -36,6 +36,7 @@
 		1A46C9B71E93A1730095A2CF /* BusinessCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A46C9B61E93A1730095A2CF /* BusinessCellCollectionViewCell.swift */; };
 		1A46C9B91E93B9520095A2CF /* clipart-approved-business-stamp-1-a481.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A46C9B81E93B9520095A2CF /* clipart-approved-business-stamp-1-a481.png */; };
 		1A46C9BB1E9406D10095A2CF /* NewBusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A46C9BA1E9406D10095A2CF /* NewBusinessViewController.swift */; };
+		1AE86DBC1E955DD200AC1D7E /* Close Window_000000_100.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AE86DBB1E955DD200AC1D7E /* Close Window_000000_100.png */; };
 		5333EC81F74B82EB54B5FC2D /* Pods_BlockIslandTodayGit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D24053CC30B73C3637E6D53 /* Pods_BlockIslandTodayGit.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		1A46C9B61E93A1730095A2CF /* BusinessCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		1A46C9B81E93B9520095A2CF /* clipart-approved-business-stamp-1-a481.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clipart-approved-business-stamp-1-a481.png"; sourceTree = "<group>"; };
 		1A46C9BA1E9406D10095A2CF /* NewBusinessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBusinessViewController.swift; sourceTree = "<group>"; };
+		1AE86DBB1E955DD200AC1D7E /* Close Window_000000_100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Close Window_000000_100.png"; sourceTree = "<group>"; };
 		2D24053CC30B73C3637E6D53 /* Pods_BlockIslandTodayGit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlockIslandTodayGit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D679FE97FFF91136D1651A8 /* Pods-BlockIslandTodayGit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockIslandTodayGit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlockIslandTodayGit/Pods-BlockIslandTodayGit.debug.xcconfig"; sourceTree = "<group>"; };
 		B0B3FD6E127B60CBDEBFBF8B /* Pods-BlockIslandTodayGit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockIslandTodayGit.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlockIslandTodayGit/Pods-BlockIslandTodayGit.release.xcconfig"; sourceTree = "<group>"; };
@@ -133,7 +135,6 @@
 				1A46C9941E9390520095A2CF /* BusinessSettingsViewController.swift */,
 				1A46C9B41E93A1550095A2CF /* MyPostsViewController.swift */,
 				1A46C9B61E93A1730095A2CF /* BusinessCellCollectionViewCell.swift */,
-				1A46C9BA1E9406D10095A2CF /* NewBusinessViewController.swift */,
 			);
 			name = Business;
 			sourceTree = "<group>";
@@ -155,6 +156,7 @@
 				1A46C99F1E93907B0095A2CF /* ForOwnersViewController.swift */,
 				1A46C9A01E93907B0095A2CF /* OwnerCollectionViewCell.swift */,
 				1A46C9A11E93907B0095A2CF /* OwnerSettingsViewController.swift */,
+				1A46C9BA1E9406D10095A2CF /* NewBusinessViewController.swift */,
 			);
 			name = Administrator;
 			sourceTree = "<group>";
@@ -180,6 +182,7 @@
 		1A46C9A71E9393240095A2CF /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				1AE86DBB1E955DD200AC1D7E /* Close Window_000000_100.png */,
 				1A46C9B81E93B9520095A2CF /* clipart-approved-business-stamp-1-a481.png */,
 				1A46C9A81E9393410095A2CF /* Delete_000000_50.png */,
 				1A46C9A91E9393410095A2CF /* Delete_000000_25.png */,
@@ -282,6 +285,7 @@
 				1A46C9881E938ED90095A2CF /* GoogleService-Info.plist in Resources */,
 				1A46C9761E93819F0095A2CF /* Main.storyboard in Resources */,
 				1A46C9AE1E9393410095A2CF /* Delete_000000_50.png in Resources */,
+				1AE86DBC1E955DD200AC1D7E /* Close Window_000000_100.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

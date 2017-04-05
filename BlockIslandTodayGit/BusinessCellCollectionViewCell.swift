@@ -41,7 +41,7 @@ class BusinessCellCollectionViewCell: UICollectionViewCell {
                         }
                     }, withCancel: nil)
                 }
-                if let postImageURL = post?.postImage {
+                if let postImageURL = post?.postImage1 {
                     if let cachedPostImage = imageCache.object(forKey: postImageURL as AnyObject) {
                         postImage.image = cachedPostImage as? UIImage
                         return

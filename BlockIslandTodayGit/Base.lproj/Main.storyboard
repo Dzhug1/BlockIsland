@@ -191,11 +191,6 @@
                                 <rect key="frame" x="197" y="252" width="162" height="93"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5t-Bk-sXh">
-                                <rect key="frame" x="233" y="263" width="90" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="Images 100"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VkZ-Mo-J80">
                                 <rect key="frame" x="52" y="261" width="90" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -226,6 +221,63 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpX-cU-jFl">
+                                <rect key="frame" x="339" y="351" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button" image="Close Window_000000_100.png">
+                                    <color key="titleColor" red="0.98163139099358221" green="0.98350253807106602" blue="0.98225195980507352" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancel4Tapped:" destination="2ps-kr-yXh" eventType="touchUpInside" id="Opm-Rh-EeY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQo-1W-PBP">
+                                <rect key="frame" x="339" y="252" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button" image="Close Window_000000_100.png">
+                                    <color key="titleColor" red="0.98163139099999996" green="0.98350253809999999" blue="0.98225195980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancel2Tapped:" destination="2ps-kr-yXh" eventType="touchUpInside" id="kWC-fj-God"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUP-x0-ofF">
+                                <rect key="frame" x="159" y="252" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button" image="Close Window_000000_100.png">
+                                    <color key="titleColor" red="0.98163139099999996" green="0.98350253809999999" blue="0.98225195980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancel1Tapped:" destination="2ps-kr-yXh" eventType="touchUpInside" id="9Ca-FE-7Yb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2yi-rW-fBw">
+                                <rect key="frame" x="159" y="351" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button" image="Close Window_000000_100.png">
+                                    <color key="titleColor" red="0.98163139099999996" green="0.98350253809999999" blue="0.98225195980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancel3Tapped:" destination="2ps-kr-yXh" eventType="touchUpInside" id="8jp-IC-Pp6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLv-j9-OrO">
+                                <rect key="frame" x="320" y="86" width="33" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Print"/>
+                                <connections>
+                                    <action selector="printTapped:" destination="2ps-kr-yXh" eventType="touchUpInside" id="qnV-B5-jai"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5t-Bk-sXh">
+                                <rect key="frame" x="233" y="262" width="90" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Images 100"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -242,6 +294,10 @@
                         <outlet property="button2" destination="a5t-Bk-sXh" id="C0Z-4H-Wjf"/>
                         <outlet property="button3" destination="Mdd-Bb-DG0" id="Ml5-ef-19S"/>
                         <outlet property="button4" destination="yOz-Nk-BKI" id="cwn-F6-P05"/>
+                        <outlet property="cancel1" destination="AUP-x0-ofF" id="fMb-e9-dhJ"/>
+                        <outlet property="cancel2" destination="CQo-1W-PBP" id="pdn-Jg-bKV"/>
+                        <outlet property="cancel3" destination="2yi-rW-fBw" id="o8L-zD-18y"/>
+                        <outlet property="cancel4" destination="dpX-cU-jFl" id="Te2-4D-bdI"/>
                         <outlet property="image1" destination="WaL-N5-15l" id="Ayx-Ey-Abx"/>
                         <outlet property="image2" destination="QPc-f0-e1x" id="dFo-Is-DgU"/>
                         <outlet property="image3" destination="J1A-Yu-bmd" id="7hH-Kl-M9T"/>
@@ -516,10 +572,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nng-Dn-wji">
-                                                    <rect key="frame" x="20" y="65" width="335" height="244"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vha-xe-dGA">
                                                     <rect key="frame" x="20" y="0.0" width="64" height="64"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -546,12 +598,16 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" directionalLockEnabled="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bBg-Gh-9or">
+                                                    <rect key="frame" x="20" y="68" width="335" height="244"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </scrollView>
                                             </subviews>
                                         </view>
                                         <connections>
                                             <outlet property="businessImage" destination="vha-xe-dGA" id="28A-uP-6wM"/>
+                                            <outlet property="imageScrollView" destination="bBg-Gh-9or" id="98N-sE-e3o"/>
                                             <outlet property="postBusinessName" destination="VlW-gh-ahi" id="4ey-8t-hFT"/>
-                                            <outlet property="postImage" destination="Nng-Dn-wji" id="FLC-8X-MG7"/>
                                             <outlet property="postText" destination="8ew-aa-LjW" id="aDS-Nx-K0a"/>
                                             <outlet property="timeLabel" destination="1n0-6r-4e2" id="dSN-DM-Ce1"/>
                                         </connections>
@@ -578,7 +634,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sq6-2a-rzp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1927" y="-1650"/>
+            <point key="canvasLocation" x="1925.5999999999999" y="-1650.224887556222"/>
         </scene>
         <!--Owner Settings View Controller-->
         <scene sceneID="xXG-Kg-lQE">
@@ -787,7 +843,6 @@
         <!--Tab Bar Controller-->
         <scene sceneID="rEf-Wa-5Av">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="h5A-0c-GiC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController id="N4L-Yq-x6O" customClass="TabBarController" customModule="BlockIslandTodayGit" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="PfQ-Fr-ASl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -801,6 +856,7 @@
                         <segue destination="tNX-GW-n4d" kind="presentation" identifier="ForBusinessesSeque" id="V8h-hm-R8j"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h5A-0c-GiC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1926" y="124"/>
         </scene>
@@ -971,6 +1027,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Close Window_000000_100.png" width="104" height="104"/>
         <image name="Delete_000000_50.png" width="50" height="50"/>
         <image name="Feed" width="25" height="25"/>
         <image name="Images 100" width="100" height="100"/>

@@ -11,7 +11,10 @@ import UIKit
 class Post: NSObject {
     var postId: String?
     var text: String?
-    var postImage: String?
+    var postImage1: String?
+    var postImage2: String?
+    var postImage3: String?
+    var postImage4: String?
     var fromID: String?
     var timestamp: NSNumber?
     var approved: String?
