@@ -45,10 +45,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ewq-ms-aDZ">
-                                                    <rect key="frame" x="20" y="111" width="335" height="244"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ECb-Nl-aPX">
                                                     <rect key="frame" x="92" y="47" width="263" height="57"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -75,6 +71,10 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" directionalLockEnabled="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZjE-TA-P8v">
+                                                    <rect key="frame" x="20" y="111" width="335" height="244"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </scrollView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clipart-approved-business-stamp-1-a481.png" translatesAutoresizingMaskIntoConstraints="NO" id="idg-CT-mEA">
                                                     <rect key="frame" x="244" y="259" width="111" height="96"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -84,8 +84,8 @@
                                         <connections>
                                             <outlet property="approvedImage" destination="idg-CT-mEA" id="xzo-ym-7yI"/>
                                             <outlet property="businessImage" destination="fqX-Ye-A7F" id="3Ml-Uj-ctN"/>
+                                            <outlet property="imageScrollView" destination="ZjE-TA-P8v" id="JsJ-Jd-bBC"/>
                                             <outlet property="postBusinessName" destination="sxL-vp-p6W" id="7Gf-Ml-zUb"/>
-                                            <outlet property="postImage" destination="ewq-ms-aDZ" id="br9-si-7Bd"/>
                                             <outlet property="postText" destination="ECb-Nl-aPX" id="WXw-lS-8eu"/>
                                             <outlet property="timeLabel" destination="jGW-2F-Rfa" id="53D-Hp-TZn"/>
                                         </connections>
@@ -106,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Auu-lP-iF1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="121" y="887"/>
+            <point key="canvasLocation" x="120.8" y="886.50674662668678"/>
         </scene>
         <!--Business Settings View Controller-->
         <scene sceneID="kU3-Td-Pz9">
@@ -730,10 +730,6 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Sp-oQ-iyD">
-                                                    <rect key="frame" x="20" y="111" width="335" height="244"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gFf-KL-xAU">
                                                     <rect key="frame" x="20" y="20" width="64" height="64"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -745,12 +741,16 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" directionalLockEnabled="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hh8-nh-AMk">
+                                                    <rect key="frame" x="20" y="111" width="335" height="244"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </scrollView>
                                             </subviews>
                                         </view>
                                         <connections>
                                             <outlet property="businessImage" destination="gFf-KL-xAU" id="E1l-lP-r0D"/>
+                                            <outlet property="imageScrollView" destination="hh8-nh-AMk" id="zMt-q4-e4j"/>
                                             <outlet property="postBusinessName" destination="MEU-wb-sid" id="Oe0-L4-gD4"/>
-                                            <outlet property="postImage" destination="5Sp-oQ-iyD" id="vYA-1q-q68"/>
                                             <outlet property="postText" destination="pCm-7I-CpD" id="h3m-tJ-kiU"/>
                                             <outlet property="timeLabel" destination="92F-sX-ZUg" id="dVO-Vn-5La"/>
                                         </connections>
@@ -777,7 +777,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tj9-ZF-2Xm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3841" y="124"/>
+            <point key="canvasLocation" x="3840.8000000000002" y="123.68815592203899"/>
         </scene>
         <!--User Profile View Controller-->
         <scene sceneID="Kl3-LE-I7S">
