@@ -50,6 +50,10 @@ class LoginViewController: UIViewController {
         })
     }
     
+    @IBAction func cancelTapped(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "HomeViewSeque", sender: nil)
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }

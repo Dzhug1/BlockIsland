@@ -13,8 +13,18 @@ import FirebaseStorage
 
 class NewPostViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    var imageArray = [UIImage]()
+    
     @IBOutlet weak var newPostTextView: UITextView!
-    @IBOutlet weak var newImageView: UIImageView!
+    @IBOutlet weak var image1: UIImageView!
+    @IBOutlet weak var image2: UIImageView!
+    @IBOutlet weak var image3: UIImageView!
+    @IBOutlet weak var image4: UIImageView!
+    @IBOutlet weak var button1: UIButton!
+    @IBOutlet weak var button2: UIButton!
+    @IBOutlet weak var button3: UIButton!
+    @IBOutlet weak var button4: UIButton!
+    @IBOutlet weak var addImageButton: UIButton!
     @IBOutlet weak var postDatePicker: UIDatePicker!
     
     override func viewDidLoad() {
@@ -22,12 +32,16 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UITextViewDe
  
     }
     
-    @IBAction func imageIsTapped(_ sender: AnyObject) {
+    @IBAction func addImageTapped(_ sender: UIButton) {
         let imagePickerController = UIImagePickerController()
         imagePickerController.sourceType = .photoLibrary
         imagePickerController.delegate = self
         
         present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    @IBAction func imageIsTapped(_ sender: AnyObject) {
+        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -36,11 +50,33 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let selectedPhoto = info[UIImagePickerControllerOriginalImage] as? UIImage
-        newImageView.image = selectedPhoto
-        
-        dismiss(animated: true, completion: nil)
+        if image1.image == nil {
+            image1.image = selectedPhoto
+            imageArray.append(image1.image!)
+            button1.isHidden = true
+            dismiss(animated: true, completion: nil)
+        } else
+        if image2.image == nil {
+            image2.image = selectedPhoto
+            imageArray.append(image2.image!)
+            button2.isHidden = true
+            dismiss(animated: true, completion: nil)
+        } else
+        if image3.image == nil {
+            image3.image = selectedPhoto
+            imageArray.append(image3.image!)
+            button3.isHidden = true
+            dismiss(animated: true, completion: nil)
+        } else
+        if image4.image == nil {
+            image4.image = selectedPhoto
+            imageArray.append(image4.image!)
+            button4.isHidden = true
+            dismiss(animated: true, completion: nil)
+            addImageButton.isEnabled = false
+        }
     }
-    
+
     func textFieldDidBeginEditing(_ textField: UITextField) {
         /* 
          MARK: clear the text on editting
@@ -54,6 +90,16 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     
     @IBAction func didTapPostButton(_ sender: UIButton) {
         
+//        for i in 0..<imageArray.count{
+//            let imageView = UIImageView()
+//            imageView.image = imageArray[i]
+//            let xPosition = imageScrollView.frame.width * CGFloat(i)
+//            imageView.frame = CGRect(x: xPosition, y: 0, width: imageScrollView.frame.width, height: imageScrollView.frame.height)
+//            
+//            imageScrollView.contentSize.width = imageScrollView.frame.width * CGFloat(i + 1)
+//            imageScrollView.addSubview(imageView)
+//        }
+        
         let user = FIRAuth.auth()?.currentUser
         guard let uid = user?.uid else {
             return
@@ -61,8 +107,8 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         
         let imageName = UUID().uuidString
         let storageRef = FIRStorage.storage().reference().child("Posts").child("\(imageName).jpg")
-        if newImageView.image != nil && newPostTextView.text.characters.count>0 {
-            if let uploadData = UIImageJPEGRepresentation(newImageView.image!, 0.2) {
+        if imageArray.count != 0 && newPostTextView.text.characters.count>0 {
+            if let uploadData = UIImageJPEGRepresentation(imageArray[0], 0.2) {
                 storageRef.put(uploadData, metadata: nil, completion: { (metadata, error) in
                     if error != nil {
                         print (error as Any)
@@ -71,10 +117,10 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UITextViewDe
                         let postDate = self.postDatePicker.date.timeIntervalSince1970
                         let timestamp = NSNumber(value: Int(postDate))
                         let refData = FIRDatabase.database().reference(fromURL: "https://blockislandtoday-302d7.firebaseio.com/")
-                        let userReference = refData.child("Posts").child("Suggested").childByAutoId()
-                        let postId = userReference.key
+                        let postReference = refData.child("Posts").child("Suggested").childByAutoId()
+                        let postId = postReference.key
                         let value = ["postId": postId, "postImage": postImageURL, "text": self.newPostTextView.text!, "fromID": uid, "timestamp": timestamp, "approved": "no"] as [String : Any]
-                        userReference.updateChildValues(value, withCompletionBlock: { (err, ref) in
+                        postReference.updateChildValues(value, withCompletionBlock: { (err, ref) in
                             if err != nil {
                                 print(err as Any)
                                 return

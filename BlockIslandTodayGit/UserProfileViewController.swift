@@ -24,7 +24,7 @@ class UserProfileViewController: UIViewController {
         try! FIRAuth.auth()?.signOut()
         profileImage.image = UIImage(named: "Profile")
         userNameLabel.text = ""
-        emailLabel.text = "Your email can be here"
+        emailLabel.text = "Your email can be here..."
     }
     
     var user = [User]()
@@ -44,21 +44,23 @@ class UserProfileViewController: UIViewController {
                         user.setValuesForKeys(dictionary)
                         self.userNameLabel.text = user.name
                         self.emailLabel.text = user.email
-                        let profileImageURL = user.profileImage
-                        if let cachedPostImage = imageCache.object(forKey: profileImageURL as AnyObject) {
+                        if let profileImageURL = user.profileImage {
+                            if let cachedPostImage = imageCache.object(forKey: profileImageURL as AnyObject) {
                             self.profileImage.image = cachedPostImage as? UIImage
                             return
+                            }
+                            if let url = NSURL(string: profileImageURL) {
+                                self.GetDatafromURL(url: url as URL, completion: { (data, response, error) in
+                                    if error != nil {
+                                        print (error!)
+                                    }
+                                    if let downloadedImage = UIImage(data: data!) {
+                                        imageCache.setObject(downloadedImage, forKey: profileImageURL as AnyObject)
+                                        self.profileImage.image = downloadedImage
+                                    }
+                                })
+                            }
                         }
-                        let url = NSURL(string: profileImageURL!)
-                        self.GetDatafromURL(url: url! as URL, completion: { (data, response, error) in
-                            if error != nil {
-                                print (error!)
-                            }
-                            if let downloadedImage = UIImage(data: data!) {
-                                imageCache.setObject(downloadedImage, forKey: profileImageURL as AnyObject)
-                                self.profileImage.image = downloadedImage
-                            }
-                        })
                     }
                 })
             } else {
