@@ -144,16 +144,6 @@ class NewPostViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     
     @IBAction func didTapPostButton(_ sender: UIButton) {
         
-//        for i in 0..<imageArray.count{
-//            let imageView = UIImageView()
-//            imageView.image = imageArray[i]
-//            let xPosition = imageScrollView.frame.width * CGFloat(i)
-//            imageView.frame = CGRect(x: xPosition, y: 0, width: imageScrollView.frame.width, height: imageScrollView.frame.height)
-//            
-//            imageScrollView.contentSize.width = imageScrollView.frame.width * CGFloat(i + 1)
-//            imageScrollView.addSubview(imageView)
-//        }
-        
         let user = FIRAuth.auth()?.currentUser
         guard let uid = user?.uid else {
             return
