@@ -417,7 +417,7 @@
         <!--Item 2-->
         <scene sceneID="O56-v9-Aeg">
             <objects>
-                <viewController id="xSI-AH-gso" sceneMemberID="viewController">
+                <viewController id="xSI-AH-gso" customClass="MapViewController" customModule="BlockIslandTodayGit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0k2-vh-Yhe"/>
                         <viewControllerLayoutGuide type="bottom" id="V2A-b7-CX1"/>
@@ -425,13 +425,43 @@
                     <view key="view" contentMode="scaleToFill" id="9fO-KD-aJh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="l0w-O7-AQX">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="xSI-AH-gso" id="8cL-zZ-iFP"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="Nx9-HB-kxz"/>
+                    <connections>
+                        <outlet property="mapView" destination="l0w-O7-AQX" id="LEg-Kv-Y4y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Sb-Gi-bhp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2881" y="-571"/>
+            <point key="canvasLocation" x="2880.8000000000002" y="-571.66416791604206"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="kDb-Le-PbW">
+            <objects>
+                <viewController id="Yf5-hG-VOb" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EyG-4E-BUW"/>
+                        <viewControllerLayoutGuide type="bottom" id="NQ0-1W-w5P"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VtB-s3-QTd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EDN-gI-jT7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2645.5999999999999" y="-923.38830584707648"/>
         </scene>
         <!--Title-->
         <scene sceneID="Pvi-Ms-0j4">
@@ -492,6 +522,50 @@
                                     <outlet property="delegate" destination="Hbp-yn-ChJ" id="vyy-H9-tCk"/>
                                 </connections>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJe-qx-FzT">
+                                <rect key="frame" x="164" y="318" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="Yf5-hG-VOb" kind="show" id="Yos-E6-Db4"/>
+                                </connections>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rbU-fl-lLq">
+                                <rect key="frame" x="0.0" y="356" width="375" height="253"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="2fU-Rk-Zpe" appends="YES" id="D4B-ZJ-9Pk"/>
+                                </connections>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Latitute:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hv6-bK-g0W">
+                                <rect key="frame" x="34" y="230" width="63" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Longitude:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZ9-ES-hcw">
+                                <rect key="frame" x="16" y="252" width="82" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rN-CE-xeK">
+                                <rect key="frame" x="106" y="252" width="253" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8q7-Gf-Oso">
+                                <rect key="frame" x="106" y="230" width="253" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -510,6 +584,9 @@
                         <outlet property="businessName" destination="TtB-mx-07W" id="w9V-Gz-anW"/>
                         <outlet property="categoryField" destination="h5u-UR-4pn" id="vrM-Dc-dMy"/>
                         <outlet property="categoryPicker" destination="nqH-nw-dcA" id="acY-4z-dh5"/>
+                        <outlet property="latituteLabel" destination="8q7-Gf-Oso" id="J05-D6-RcK"/>
+                        <outlet property="longitudeLabel" destination="7rN-CE-xeK" id="gOQ-hv-Vfb"/>
+                        <outlet property="map" destination="rbU-fl-lLq" id="NQe-6t-yQp"/>
                         <outlet property="phoneNumber" destination="Bqy-zw-DP4" id="ow1-7W-0gh"/>
                     </connections>
                 </viewController>
@@ -520,6 +597,11 @@
                         <outlet property="delegate" destination="Hbp-yn-ChJ" id="8Km-nd-Khs"/>
                     </connections>
                 </tapGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="2fU-Rk-Zpe">
+                    <connections>
+                        <action selector="addPlaceTapped:" destination="Hbp-yn-ChJ" id="xaq-A6-hgD"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1900" y="-926.98650674662679"/>
         </scene>

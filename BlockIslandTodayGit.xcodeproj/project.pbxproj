@@ -36,6 +36,10 @@
 		1A46C9B71E93A1730095A2CF /* BusinessCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A46C9B61E93A1730095A2CF /* BusinessCellCollectionViewCell.swift */; };
 		1A46C9B91E93B9520095A2CF /* clipart-approved-business-stamp-1-a481.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A46C9B81E93B9520095A2CF /* clipart-approved-business-stamp-1-a481.png */; };
 		1A46C9BB1E9406D10095A2CF /* NewBusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A46C9BA1E9406D10095A2CF /* NewBusinessViewController.swift */; };
+		1A98FCFE1E96B18200BEAB32 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A98FCFD1E96B18200BEAB32 /* MapKit.framework */; };
+		1A98FD021E96BE2200BEAB32 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A98FD011E96BE2200BEAB32 /* Annotation.swift */; };
+		1A98FD071E96FE0600BEAB32 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A98FD061E96FE0600BEAB32 /* MapViewController.swift */; };
+		1A98FD091E97055300BEAB32 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A98FD081E97055300BEAB32 /* Business.swift */; };
 		1AE86DBC1E955DD200AC1D7E /* Close Window_000000_100.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AE86DBB1E955DD200AC1D7E /* Close Window_000000_100.png */; };
 		5333EC81F74B82EB54B5FC2D /* Pods_BlockIslandTodayGit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D24053CC30B73C3637E6D53 /* Pods_BlockIslandTodayGit.framework */; };
 /* End PBXBuildFile section */
@@ -72,6 +76,10 @@
 		1A46C9B61E93A1730095A2CF /* BusinessCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		1A46C9B81E93B9520095A2CF /* clipart-approved-business-stamp-1-a481.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clipart-approved-business-stamp-1-a481.png"; sourceTree = "<group>"; };
 		1A46C9BA1E9406D10095A2CF /* NewBusinessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBusinessViewController.swift; sourceTree = "<group>"; };
+		1A98FCFD1E96B18200BEAB32 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		1A98FD011E96BE2200BEAB32 /* Annotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
+		1A98FD061E96FE0600BEAB32 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		1A98FD081E97055300BEAB32 /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		1AE86DBB1E955DD200AC1D7E /* Close Window_000000_100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Close Window_000000_100.png"; sourceTree = "<group>"; };
 		2D24053CC30B73C3637E6D53 /* Pods_BlockIslandTodayGit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlockIslandTodayGit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D679FE97FFF91136D1651A8 /* Pods-BlockIslandTodayGit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockIslandTodayGit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlockIslandTodayGit/Pods-BlockIslandTodayGit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -83,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A98FCFE1E96B18200BEAB32 /* MapKit.framework in Frameworks */,
 				5333EC81F74B82EB54B5FC2D /* Pods_BlockIslandTodayGit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,6 +155,7 @@
 				1A46C9981E9390720095A2CF /* TabBarController.swift */,
 				1A46C9991E9390720095A2CF /* FeedUserViewController.swift */,
 				1A46C99A1E9390720095A2CF /* FeedUserCollectionViewCell.swift */,
+				1A98FD061E96FE0600BEAB32 /* MapViewController.swift */,
 			);
 			name = Users;
 			sourceTree = "<group>";
@@ -175,6 +185,8 @@
 			children = (
 				1A46C98B1E938FD50095A2CF /* Post.swift */,
 				1A46C98C1E938FD50095A2CF /* User.swift */,
+				1A98FD011E96BE2200BEAB32 /* Annotation.swift */,
+				1A98FD081E97055300BEAB32 /* Business.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -197,6 +209,7 @@
 		598898EFCC3515892960223B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A98FCFD1E96B18200BEAB32 /* MapKit.framework */,
 				2D24053CC30B73C3637E6D53 /* Pods_BlockIslandTodayGit.framework */,
 			);
 			name = Frameworks;
@@ -248,6 +261,11 @@
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = XAWKT48TVZ;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -353,10 +371,13 @@
 				1A46C9961E9390520095A2CF /* BusinessSettingsViewController.swift in Sources */,
 				1A46C9A41E93907B0095A2CF /* OwnerSettingsViewController.swift in Sources */,
 				1A46C9911E938FF90095A2CF /* SignUpViewController.swift in Sources */,
+				1A98FD021E96BE2200BEAB32 /* Annotation.swift in Sources */,
 				1A46C99D1E9390720095A2CF /* FeedUserViewController.swift in Sources */,
 				1A46C9A31E93907B0095A2CF /* OwnerCollectionViewCell.swift in Sources */,
+				1A98FD071E96FE0600BEAB32 /* MapViewController.swift in Sources */,
 				1A46C9731E93819F0095A2CF /* ViewController.swift in Sources */,
 				1A46C9711E93819F0095A2CF /* AppDelegate.swift in Sources */,
+				1A98FD091E97055300BEAB32 /* Business.swift in Sources */,
 				1A46C9951E9390520095A2CF /* NewPostViewController.swift in Sources */,
 				1A46C99E1E9390720095A2CF /* FeedUserCollectionViewCell.swift in Sources */,
 				1A46C9B71E93A1730095A2CF /* BusinessCellCollectionViewCell.swift in Sources */,

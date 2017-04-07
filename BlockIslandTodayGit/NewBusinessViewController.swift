@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 import FirebaseDatabase
 import FirebaseStorage
 
-class NewBusinessViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class NewBusinessViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var phoneNumber: UITextField!
     @IBOutlet weak var businessDescr: UITextField!
@@ -18,6 +20,13 @@ class NewBusinessViewController: UIViewController, UIPickerViewDelegate, UIPicke
     @IBOutlet weak var businessLogo: UIImageView!
     @IBOutlet weak var categoryField: UITextField!
     @IBOutlet weak var categoryPicker: UIPickerView!
+    @IBOutlet weak var latituteLabel: UILabel!
+    @IBOutlet weak var longitudeLabel: UILabel!
+    @IBOutlet weak var map: MKMapView! {
+        didSet {
+            map.mapType = .hybrid
+        }
+    }
     
     var categories = ["Restaurant", "Taxi", "Hotel", "Shop"]
     var imageArray = [UIImage]()
@@ -57,7 +66,7 @@ class NewBusinessViewController: UIViewController, UIPickerViewDelegate, UIPicke
                         print (error as Any)
                         return
                     } else if let postImageURL = metadata?.downloadURL()?.absoluteString {
-                        let value = ["businessName": self.businessName.text ?? "", "businessLogo": postImageURL, "businessDescription": self.businessDescr.text ?? "", "category": self.categoryField.text ?? "", "phone": self.phoneNumber.text ?? "", "email": ""] as [String : Any]
+                        let value = ["businessName": self.businessName.text ?? "", "businessLogo": postImageURL, "businessDescription": self.businessDescr.text ?? "", "category": self.categoryField.text ?? "", "phone": self.phoneNumber.text ?? "", "latitute": self.latituteLabel.text ?? "", "longitude": self.longitudeLabel.text ?? "", "email": ""] as [String : Any]
                             businessReference.updateChildValues(value, withCompletionBlock: { (err, ref) in
                                 if err != nil {
                                     print(err as Any)
@@ -100,21 +109,31 @@ class NewBusinessViewController: UIViewController, UIPickerViewDelegate, UIPicke
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        for i in 0..<imageArray.count{
-//            let imageView = UIImageView()
-//            imageView.image = imageArray[i]
-//            let xPosition = imageScrollView.frame.width * CGFloat(i)
-//            imageView.frame = CGRect(x: xPosition, y: 0, width: imageScrollView.frame.width, height: imageScrollView.frame.height)
-//            
-//            imageScrollView.contentSize.width = imageScrollView.frame.width * CGFloat(i + 1)
-//            imageScrollView.addSubview(imageView)
-//        }
-        
-        
+        let location = CLLocationCoordinate2DMake(41.172959, -71.558155)
+        map.setRegion(MKCoordinateRegionMakeWithDistance(location, 1500, 1500), animated: true)
+        let annotation = Annotation(title: "Welcome to Block Island", subtitle: "You are here", coordinate: location)
+        map.addAnnotation(annotation)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    
+    @IBAction func addPlaceTapped(_ sender: UILongPressGestureRecognizer) {
+        
+        let location = sender.location(in: map)
+        let locCoord = map.convert(location, toCoordinateFrom: map)
+        let annotation = Annotation(title: businessName.text!, subtitle: businessDescr.text!, coordinate: locCoord)
+        
+        map.removeAnnotations(map.annotations)
+        map.addAnnotation(annotation)
+        
+        let coord = map.convert(location, toCoordinateFrom: self.view)
+        
+        let lat = String(coord.latitude)
+        let long = String(coord.longitude)
+        latituteLabel.text = lat
+        longitudeLabel.text = long
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 
     func createAlert(title: String, message: String) {
