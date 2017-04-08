@@ -22,11 +22,14 @@ class NewBusinessViewController: UIViewController, UIPickerViewDelegate, UIPicke
     @IBOutlet weak var categoryPicker: UIPickerView!
     @IBOutlet weak var latituteLabel: UILabel!
     @IBOutlet weak var longitudeLabel: UILabel!
-    @IBOutlet weak var map: MKMapView! {
-        didSet {
-            map.mapType = .hybrid
-        }
-    }
+//    @IBOutlet weak var map: MKMapView! {
+//        didSet {
+//            map.delegate = self
+//            map.mapType = .hybrid
+//        }
+//    }
+    
+    let map = MKMapView()
     
     var categories = ["Restaurant", "Taxi", "Hotel", "Shop"]
     var imageArray = [UIImage]()
@@ -107,24 +110,32 @@ class NewBusinessViewController: UIViewController, UIPickerViewDelegate, UIPicke
     }
     
     override func viewDidLoad() {
+        
+        map.delegate = self
+        map.mapType = .hybrid
+        map.frame = CGRect(x: 0, y: 5, width: 375, height: 253)
         super.viewDidLoad()
+        view.addSubview(map)
         
         let location = CLLocationCoordinate2DMake(41.172959, -71.558155)
         map.setRegion(MKCoordinateRegionMakeWithDistance(location, 1500, 1500), animated: true)
         let annotation = Annotation(title: "Welcome to Block Island", subtitle: "You are here", coordinate: location)
         map.addAnnotation(annotation)
+        
+        let longTapGestureOnMap = UILongPressGestureRecognizer(target: self, action: #selector(lonTapGestureOnMap))
+        map.addGestureRecognizer(longTapGestureOnMap)
     }
     
-    @IBAction func addPlaceTapped(_ sender: UILongPressGestureRecognizer) {
+    func lonTapGestureOnMap(gestureRecognizer: UILongPressGestureRecognizer) {
+        let touchLocation = gestureRecognizer.location(in: map)
+        let locationCoordinate = map.convert(touchLocation, toCoordinateFrom: map)
         
-        let location = sender.location(in: map)
-        let locCoord = map.convert(location, toCoordinateFrom: map)
-        let annotation = Annotation(title: businessName.text!, subtitle: businessDescr.text!, coordinate: locCoord)
+        let annotation = Annotation(title: businessName.text!, subtitle: businessDescr.text!, coordinate: locationCoordinate)
         
         map.removeAnnotations(map.annotations)
         map.addAnnotation(annotation)
         
-        let coord = map.convert(location, toCoordinateFrom: self.view)
+        let coord = map.convert(touchLocation, toCoordinateFrom: self.view)
         
         let lat = String(coord.latitude)
         let long = String(coord.longitude)
